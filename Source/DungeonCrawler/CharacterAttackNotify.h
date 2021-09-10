@@ -9,13 +9,20 @@
 /**
  * 
  */
-UCLASS()
+UCLASS(Blueprintable)
 class DUNGEONCRAWLER_API UCharacterAttackNotify : public UAnimNotify
 {
 	GENERATED_BODY()
 
-	UPROPERTY(EditAnywhere)
-	USoundBase* impactSound;
+public:
+		virtual void Notify(class USkeletalMeshComponent* MeshComp, class UAnimSequenceBase* Animation) override;
+	
+
+		UPROPERTY(EditAnywhere)
+			USoundBase* impactSound;
+		UPROPERTY(EditAnywhere)
+			UParticleSystemComponent* impactParticleEffect;
+
 
 	
 

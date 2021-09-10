@@ -26,6 +26,7 @@ void ADungeonPlayerController::SetupInputComponent()
 	InputComponent->BindAction("Action",IE_Pressed,  this, &ADungeonPlayerController::Attack);
 	InputComponent->BindAction("SpecialMove", IE_Pressed, this, &ADungeonPlayerController::CharacterSpecialMove);
 
+	
 }
 
 

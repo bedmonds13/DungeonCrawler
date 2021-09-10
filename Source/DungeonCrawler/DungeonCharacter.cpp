@@ -180,15 +180,13 @@ void ADungeonCharacter::Left(float amount)
 		AddMovementInput(FVector(0, -1,0), amount);
 }
 
-void ADungeonCharacter::SpecialMove_Implementation(FRotator newRotation)
-{
-}
 
 void ADungeonCharacter::ResetInputTimer()
 {
 	InputAllowed = false;
 	inputDelayCount = 0;
 }
+
 
 void ADungeonCharacter::TakeHit_Implementation(float damage, ADungeonCharacter* attackingCharacter, AttackType type)
 {
@@ -211,6 +209,11 @@ void ADungeonCharacter::TakeHit_Implementation(float damage, ADungeonCharacter* 
 			hurtCount++;
 		}
 	}
+}
+
+void ADungeonCharacter::SetInputAllowed(bool isInputAllowed)
+{
+	InputAllowed = isInputAllowed;
 }
 
 
@@ -248,6 +251,22 @@ void ADungeonCharacter::Die_Implementation()
 		blackboard->SetValueAsBool("IsDead", IsDead);
 	}
 
+
+}
+
+
+void ADungeonCharacter::SpecialMove_Implementation(FRotator newRotation)
+{
+
+	ADungeonPlayerController* playerController = Cast<ADungeonPlayerController>(GetOwner());
+	if (playerController)
+	{
+		if (InputAllowed)
+		{
+			this->SetActorRotation(FRotator(0.0f, newRotation.Yaw, 0.0f));
+			ResetInputTimer();
+		}
+	}
 
 }
 

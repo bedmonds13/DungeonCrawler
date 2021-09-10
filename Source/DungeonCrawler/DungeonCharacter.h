@@ -75,7 +75,6 @@ private:
 
 	UPROPERTY(VisibleAnywhere)
 		int hurtCount;
-
 	
 protected:
 
@@ -117,11 +116,13 @@ public:
 
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 		void AttackImpactEvent();
-
+	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
+		void SpecialImpactEvent();
 	
 	virtual void TakeHit_Implementation(float damage, ADungeonCharacter* attackingCharacter, AttackType type) override;
 		
-
+	UFUNCTION(BlueprintCallable)
+		void SetInputAllowed(bool isInputAllowed);
 	
 	
 };
