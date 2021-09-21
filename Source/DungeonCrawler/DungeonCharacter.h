@@ -5,6 +5,7 @@
 #include "CoreMinimal.h"
 #include "GameFramework/Character.h"
 #include "ITakeHit.h"
+#include "NiagaraComponent.h"
 #include "DungeonCharacter.generated.h"
 
 UCLASS()
@@ -50,7 +51,11 @@ public:
 		USoundBase* impactSound;
 	UPROPERTY(EditAnywhere, BlueprintReadOnly)
 		TArray<USoundBase*> hurtSounds;
-	
+
+	/*Niagara Effects*/
+
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+	 UNiagaraSystem* impactParticleEffect;
 private:
 
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly, Category = Camera, meta = (AllowPrivateAccess = "true"))
