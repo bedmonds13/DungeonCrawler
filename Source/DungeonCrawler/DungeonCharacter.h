@@ -32,6 +32,8 @@ public:
 		float MaxComboDelayAmount;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		float MaxAttackDelayAmount;
+	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
+		float health;
 
 	/*Animation Montages*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -75,8 +77,7 @@ private:
 		float inputDelayCount;
 	UPROPERTY(VisibleAnywhere,  meta = (AllowPrivateAccess = "true"))
 		bool InputAllowed;
-	UPROPERTY(VisibleAnywhere)
-		float health;
+	
 
 	UPROPERTY(VisibleAnywhere)
 		int hurtCount;
@@ -128,6 +129,8 @@ public:
 		
 	UFUNCTION(BlueprintCallable)
 		void SetInputAllowed(bool isInputAllowed);
+
+	
 	
 	
 };
