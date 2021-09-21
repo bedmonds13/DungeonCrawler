@@ -5,6 +5,7 @@
 #include "CharacterStats.generated.h"
 
 
+
 USTRUCT(BlueprintType)
 struct FCharacterStats
 {
@@ -15,3 +16,5 @@ struct FCharacterStats
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 		TSubclassOf <ADungeonCharacter> playerSelectedCharacter;
 };
+
+

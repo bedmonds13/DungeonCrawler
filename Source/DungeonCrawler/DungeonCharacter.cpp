@@ -216,6 +216,12 @@ void ADungeonCharacter::SetInputAllowed(bool isInputAllowed)
 	InputAllowed = isInputAllowed;
 }
 
+void ADungeonCharacter::SetCharacterHealth(float SavedHealth)
+{
+	this->health = SavedHealth;
+}
+
+
 
 void ADungeonCharacter::Attack_Implementation(FRotator newRotation)
 {
