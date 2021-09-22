@@ -96,7 +96,6 @@ void ADungeonCharacter::BeginPlay()
 
 void ADungeonCharacter::BeginOverlap(UPrimitiveComponent* OverlappedComponent, AActor* OtherActor, UPrimitiveComponent* OtherComp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
-	UE_LOG(LogTemp, Warning, TEXT("%s"), *OtherActor->GetName());
 	AItem* newItem = Cast<AItem>(OtherActor);
 	if (newItem != nullptr)
 	{
