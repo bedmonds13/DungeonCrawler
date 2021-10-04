@@ -34,6 +34,9 @@ public:
 		float MaxAttackDelayAmount;
 	UPROPERTY(VisibleAnywhere, BlueprintReadOnly)
 		float health;
+	UPROPERTY(EditAnywhere, BlueprintReadOnly)
+		float Damage;
+	
 
 	/*Animation Montages*/
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -114,7 +117,7 @@ public:
 	UFUNCTION(BlueprintNativeEvent)
 	void Die();
 
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 		void SpecialMove(FRotator newRotation);
 
 	UFUNCTION(BlueprintCallable)

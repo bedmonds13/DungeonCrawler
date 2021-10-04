@@ -224,12 +224,7 @@ void ADungeonCharacter::SetCharacterHealth(float SavedHealth)
 
 void ADungeonCharacter::Attack_Implementation(FRotator newRotation)
 {
-	
-/*
-		FRotator rotationToMouse = UKismetMathLibrary::FindLookAtRotation(this->GetActorLocation() , mouseHit.Location);
-	
-		//Exclude pitch and roll to new actor rotation
-*/
+
 	ADungeonPlayerController* playerController = Cast<ADungeonPlayerController>(GetOwner());
 	if (playerController)
 	{

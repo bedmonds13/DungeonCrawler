@@ -78,13 +78,6 @@ void ADungeonPlayerController::Attack()
 		GetHitResultUnderCursorForObjects(objTypes, false, TraceHitResult);
 		
 		AActor* actor = TraceHitResult.GetActor();
-		
-		if (actor)
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, actor->GetName());
-		else
-			GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, "Actor not found");
-		
-		GEngine->AddOnScreenDebugMessage(-1, 15.0f, FColor::Yellow, TraceHitResult.Location.ToString());
 
 		
 		FRotator rotation = UKismetMathLibrary::FindLookAtRotation(character->GetActorLocation(), TraceHitResult.Location);
