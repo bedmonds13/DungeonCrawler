@@ -114,7 +114,7 @@ public:
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void Attack(FRotator newRotation);
 
-	UFUNCTION(BlueprintNativeEvent)
+	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)
 	void Die();
 
 	UFUNCTION(BlueprintNativeEvent, BlueprintCallable)

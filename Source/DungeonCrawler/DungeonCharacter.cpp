@@ -195,6 +195,7 @@ void ADungeonCharacter::TakeHit_Implementation(float damage, ADungeonCharacter* 
 	if (health <= 0 && IsDead == false)
 	{
 		Die();
+		IsDead = true;
 	}
 	else
 	{
